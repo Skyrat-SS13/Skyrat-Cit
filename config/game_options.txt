@@ -77,18 +77,18 @@ ALERT_DELTA Destruction of the station is imminent. All crew are instructed to o
 ## Set to 0 to disable that mode.
 
 PROBABILITY TRAITOR 5
-PROBABILITY TRAITORBRO 2
-PROBABILITY TRAITORCHAN 4
+PROBABILITY TRAITORBRO 0
+PROBABILITY TRAITORCHAN 0
 PROBABILITY INTERNAL_AFFAIRS 3
 PROBABILITY NUCLEAR 2
 PROBABILITY REVOLUTION 2
 PROBABILITY CULT 2
-PROBABILITY CHANGELING 2
-PROBABILITY WIZARD 4
+PROBABILITY CHANGELING 0
+PROBABILITY WIZARD 0
 PROBABILITY MONKEY 0
 PROBABILITY METEOR 0
-PROBABILITY EXTENDED 0
-PROBABILITY SECRET_EXTENDED 0
+PROBABILITY EXTENDED 20
+PROBABILITY SECRET_EXTENDED 20
 PROBABILITY DEVIL 0
 PROBABILITY DEVIL_AGENTS 0
 PROBABILITY CLOWNOPS 0
@@ -204,7 +204,7 @@ CHANGELING_SCALING_COEFF 6
 ## Variables calculate how number of open security officer positions will scale to population.
 ## Used as (Officers = Population / Coeff)
 ## Set to 0 to disable scaling and use default numbers instead.
-SECURITY_SCALING_COEFF 8
+SECURITY_SCALING_COEFF 4
 
 ## The number of objectives traitors get.
 ## Not including escaping/hijacking.
@@ -298,7 +298,7 @@ MINIMAL_ACCESS_THRESHOLD 20
 #ASSISTANTS_HAVE_MAINT_ACCESS
 
 ## Uncoment to give security maint access. Note that if you dectivate JOBS_HAVE_MINIMAL_ACCESS security already gets maint from that.
-#SECURITY_HAS_MAINT_ACCESS
+SECURITY_HAS_MAINT_ACCESS
 
 ## Uncomment to give everyone maint access.
 #EVERYONE_HAS_MAINT_ACCESS
@@ -461,7 +461,7 @@ OVERFLOW_CAP -1
 #STARLIGHT
 
 ## Uncomment to bring back old grey suit assistants instead of the now default rainbow colored assistants.
-#GREY_ASSISTANTS
+GREY_ASSISTANTS
 
 ## Midround Antag (aka Mulligan antag) config options ###
 
@@ -503,7 +503,7 @@ BOMBCAP 20
 ## of ruins.
 LAVALAND_BUDGET 60
 
-## Space Ruin Budged
+## Space Ruin Budget
 Space_Budget 16
 
 ## Time in ds from when a player latejoins till the arrival shuttle docks at the station
