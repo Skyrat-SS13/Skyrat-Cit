@@ -8,4 +8,13 @@
 # NOTE: syntax was changed to allow hyphenation of ranknames, since spaces are stripped.      #
 ###############################################################################################
 
-yourckeygoeshere = Host
+xyelgazel - Host
+improvedname - Host
+DiscordWizard - Game Master
+DerFlammenwerfer - Game Master
+SevnTohno - Game Master
+FubukiTilde - Game Master
+SpessInquisitor - Game Admin
+DogZero - Game Admin
+Investigator77 - Game Admin
+Planetary - Game Admin
