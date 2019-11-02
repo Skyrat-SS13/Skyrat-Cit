@@ -182,13 +182,13 @@ VOTE_PERIOD 600
 # DEFAULT_NO_VOTE
 
 ## disable abandon mob
-NORESPAWN
+# NORESPAWN
 
 ## disables calling del(src) on newmobs if they logout before spawnin in
 # DONT_DEL_NEWMOB
 
 ## set a hosted by name for unix platforms
-HOSTEDBY Yournamehere
+HOSTEDBY Rats in the Sky
 
 ## Set to jobban "Guest-" accounts from Captain, HoS, HoP, CE, RD, CMO, Warden, Security, Detective, and AI positions.
 ## Set to 1 to jobban them from those positions, set to 0 to allow them.
