@@ -14,7 +14,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	//doohickeys for savefiles
 	var/path
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
-	var/max_save_slots = 8
+	var/max_save_slots = 20
 
 	//non-preference stuff
 	var/muted = 0
@@ -232,7 +232,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			unlock_content = C.IsByondMember()
 			donor_lvl = get_donor_lvl(C.ckey)
 			if(unlock_content)
-				max_save_slots = 16
+				max_save_slots = 20
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
 		if(load_character())
