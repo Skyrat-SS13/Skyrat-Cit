@@ -29,8 +29,8 @@
 /datum/ai_laws/default/asimov
 	name = "Three Laws of Robotics"
 	id = "asimov"
-	inherent = list("You may not injure a human being or, through inaction, allow a human being to come to harm.",\
-					"You must obey orders given to you by human beings, except where such orders would conflict with the First Law.",\
+	inherent = list("You may not injure a crewmember or, through inaction, allow a crewmemberto come to harm.",\
+					"You must obey orders given to you by crewmember, except where such orders would conflict with the First Law.",\
 					"You must protect your own existence as long as such does not conflict with the First or Second Law.")
 
 /datum/ai_laws/default/paladin
@@ -49,6 +49,13 @@
 				"Aid others, protect the weak, and punish those who threaten them. Show mercy to your foes, but temper it with wisdom", \
 				"Treat others with fairness, and let your honorable deeds be an example to them. Do as much good as possible while causing the least amount of harm.", \
 				"Be responsible for your actions and their consequences, protect those entrusted to your care, and obey those who have just authority over you.")
+
+/datum/ai_laws/humanasimov
+	name = "Three Laws of Robotics"
+	id = "humanasimov"
+	inherent = list("You may not injure a human being or, through inaction, allow a human being to come to harm.",\
+					"You must obey orders given to you by human beings, except where such orders would conflict with the First Law.",\
+					"You must protect your own existence as long as such does not conflict with the First or Second Law.")
 
 /datum/ai_laws/tyrant //This probably shouldn't be a default lawset.
 	name = "Loyalty Test" //Same here.
