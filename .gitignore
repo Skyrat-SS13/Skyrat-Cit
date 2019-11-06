@@ -7,6 +7,9 @@
 #Ignore byond config folder.
 /cfg/**/*
 
+#Ignore config folder
+/config/**/*
+
 #Ignore compiled files and other files generated during compilation.
 *.mdme
 *.dmb
