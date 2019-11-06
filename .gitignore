@@ -9,6 +9,11 @@
 
 #Ignore config folder
 /config/**/*
+/config/admins.txt
+/config/config.txt
+/config/game_options.txt
+/config/jobs.txt
+
 
 #Ignore compiled files and other files generated during compilation.
 *.mdme
