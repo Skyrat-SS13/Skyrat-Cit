@@ -414,6 +414,7 @@ ROUNDSTART_RACES lizard
 ROUNDSTART_RACES plasmaman
 #ROUNDSTART_RACES shadow
 ROUNDSTART_RACES felinid
+ROUNDSTART_RACES podweak
 
 ## Races that are better than humans in some ways, but worse in others
 #ROUNDSTART_RACES jelly
@@ -444,6 +445,7 @@ ROUNDSTART_RACES xeno
 ROUNDSTART_RACES slimeperson
 ROUNDSTART_RACES guilmon
 ROUNDSTART_RACES ipc
+ROUNDSTART_RACES podweak
 
 ##-------------------------------------------------------------------------------------------
 
