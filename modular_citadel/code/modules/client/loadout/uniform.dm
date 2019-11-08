@@ -1,5 +1,6 @@
-/datum/gear/uniform/suit/permit
+/datum/gear/gear/permit
 	display_name = "nudity permit"
+	category = SLOT_W_UNIFORM
 	path = /obj/item/clothing/under/permit
 
 /datum/gear/suitblack
