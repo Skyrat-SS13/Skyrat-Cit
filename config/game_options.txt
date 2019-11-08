@@ -77,18 +77,18 @@ ALERT_DELTA Destruction of the station is imminent. All crew are instructed to o
 ## Set to 0 to disable that mode.
 
 PROBABILITY TRAITOR 5
-PROBABILITY TRAITORBRO 0
-PROBABILITY TRAITORCHAN 0
+PROBABILITY TRAITORBRO 2
+PROBABILITY TRAITORCHAN 4
 PROBABILITY INTERNAL_AFFAIRS 3
 PROBABILITY NUCLEAR 2
 PROBABILITY REVOLUTION 2
 PROBABILITY CULT 2
-PROBABILITY CHANGELING 0
+PROBABILITY CHANGELING 1
 PROBABILITY WIZARD 0
 PROBABILITY MONKEY 0
 PROBABILITY METEOR 0
-PROBABILITY EXTENDED 20
-PROBABILITY SECRET_EXTENDED 20
+PROBABILITY EXTENDED 0
+PROBABILITY SECRET_EXTENDED 0
 PROBABILITY DEVIL 0
 PROBABILITY DEVIL_AGENTS 0
 PROBABILITY CLOWNOPS 0
@@ -108,7 +108,7 @@ CONTINUOUS TRAITORBRO
 CONTINUOUS TRAITORCHAN
 CONTINUOUS INTERNAL_AFFAIRS
 #CONTINUOUS NUCLEAR
-#CONTINUOUS REVOLUTION
+CONTINUOUS REVOLUTION
 CONTINUOUS CULT
 CONTINUOUS CLOCKWORK_CULT
 CONTINUOUS CHANGELING
@@ -155,20 +155,20 @@ MIDROUND_ANTAG WIZARD
 #MIN_POP DOUBLE_AGENTS 25
 #MAX_POP DOUBLE_AGENTS -1
 
-#MIN_POP NUCLEAR 0
-#MAX_POP NUCLEAR -1
+MIN_POP NUCLEAR 0
+MAX_POP NUCLEAR -1
 
-#MIN_POP REVOLUTION 20
-#MAX_POP REVOLUTION -1
+MIN_POP REVOLUTION 20
+MAX_POP REVOLUTION -1
 
-#MIN_POP CULT 24
-#MAX_POP CULT -1
+MIN_POP CULT 20
+MAX_POP CULT -1
 
-#MIN_POP CLOCKWORK_CULT 24
-#MAX_POP CLOCKWORK_CULT -1
+MIN_POP CLOCKWORK_CULT 24
+MAX_POP CLOCKWORK_CULT -1
 
-#MIN_POP CHANGELING 15
-#MAX_POP CHANGELING -1
+MIN_POP CHANGELING 15
+MAX_POP CHANGELING -1
 
 #MIN_POP WIZARD 20
 #MAX_POP WIZARD -1
@@ -186,8 +186,8 @@ MIDROUND_ANTAG WIZARD
 #MAX_POP DEVIL_AGENTS -1
 
 ## Setting at least one mode to be playable at 0/1 players is required.
-#MIN_POP EXTENDED 0
-#MAX_POP EXTENDED -1
+MIN_POP EXTENDED 0
+MAX_POP EXTENDED -1
 
 
 
@@ -204,7 +204,7 @@ CHANGELING_SCALING_COEFF 6
 ## Variables calculate how number of open security officer positions will scale to population.
 ## Used as (Officers = Population / Coeff)
 ## Set to 0 to disable scaling and use default numbers instead.
-SECURITY_SCALING_COEFF 4
+SECURITY_SCALING_COEFF 5
 
 ## The number of objectives traitors get.
 ## Not including escaping/hijacking.
@@ -295,7 +295,7 @@ MINIMAL_ACCESS_THRESHOLD 20
 #JOBS_HAVE_MINIMAL_ACCESS
 
 ## Uncomment to give assistants maint access.
-#ASSISTANTS_HAVE_MAINT_ACCESS
+ASSISTANTS_HAVE_MAINT_ACCESS
 
 ## Uncoment to give security maint access. Note that if you dectivate JOBS_HAVE_MINIMAL_ACCESS security already gets maint from that.
 SECURITY_HAS_MAINT_ACCESS
@@ -329,7 +329,7 @@ SEC_START_BRIG
 ## Set to 1 for "custom", silicons will start with the custom laws defined in silicon_laws.txt. (If silicon_laws.txt is empty, the AI will spawn with asimov and Custom boards will auto-delete.)
 ## Set to 2 for "random", silicons will start with a random lawset picked from random laws specified below.
 ## Set to 3 for "weighted random", using values in "silicon_weights.txt", a law will be selected, with weights specifed in that file.
-DEFAULT_LAWS 0
+DEFAULT_LAWS 1
 
 ## RANDOM LAWS ##
 ## ------------------------------------------------------------------------------------------
@@ -409,10 +409,10 @@ ROUNDSTART_RACES human
 
 ## Races that are strictly worse than humans that could probably be turned on without balance concerns
 ROUNDSTART_RACES lizard
-#ROUNDSTART_RACES fly
-#ROUNDSTART_RACES moth
+ROUNDSTART_RACES fly
+ROUNDSTART_RACES moth
 ROUNDSTART_RACES plasmaman
-#ROUNDSTART_RACES shadow
+ROUNDSTART_RACES shadow
 ROUNDSTART_RACES felinid
 ROUNDSTART_RACES podweak
 
@@ -445,7 +445,6 @@ ROUNDSTART_RACES xeno
 ROUNDSTART_RACES slimeperson
 ROUNDSTART_RACES guilmon
 ROUNDSTART_RACES ipc
-ROUNDSTART_RACES podweak
 
 ##-------------------------------------------------------------------------------------------
 
@@ -460,7 +459,7 @@ OVERFLOW_CAP -1
 
 ## Starlight for exterior walls and breaches. Uncomment for starlight!
 ## This is disabled by default to make testing quicker, should be enabled on production servers or testing servers messing with lighting
-#STARLIGHT
+STARLIGHT
 
 ## Uncomment to bring back old grey suit assistants instead of the now default rainbow colored assistants.
 GREY_ASSISTANTS
@@ -505,7 +504,7 @@ BOMBCAP 20
 ## of ruins.
 LAVALAND_BUDGET 60
 
-## Space Ruin Budget
+## Space Ruin Budged
 Space_Budget 16
 
 ## Time in ds from when a player latejoins till the arrival shuttle docks at the station
@@ -526,7 +525,7 @@ MICE_ROUNDSTART 10
 #EMERGENCY_SHUTTLE_AUTOCALL_THRESHOLD 0.2
 
 ## Determines if players are allowed to print integrated circuits, uncomment to allow.
-#IC_PRINTING
+IC_PRINTING
 
 ## Uncomment to allow roundstart quirk selection in the character setup menu.
 ## This used to be named traits, hence the config name, but it handles quirks, not the other kind of trait!
@@ -536,10 +535,10 @@ ROUNDSTART_TRAITS
 #DISABLE_HUMAN_MOOD
 
 ## Enable night shifts ##
-#ENABLE_NIGHT_SHIFTS
+ENABLE_NIGHT_SHIFTS
 
 ## Enable randomized shift start times##
-#RANDOMIZE_SHIFT_TIME
+RANDOMIZE_SHIFT_TIME
 
 ## Sets shift time to server time at roundstart. Overridden by RANDOMIZE_SHIFT_TIME ##
 #SHIFT_TIME_REALTIME
@@ -548,4 +547,4 @@ ROUNDSTART_TRAITS
 MONKEYCAP 64
 
 ## Uncomment to use TG-style combat
-#DISABLE_STAMBUFFER
+DISABLE_STAMBUFFER

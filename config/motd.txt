@@ -1,5 +1,14 @@
 <!-- Most valid html will work in here, excluding images. -->
 
-<h1>Welcome to Space Station 13!</h1>
+<h1>Welcome to Skyrat 13!</h1>
 
-<i>This server is running a /tg/station 13 Git build.</i>
+<h2><strong>This server is 18+ and anthro-friendly. Lore is currently pending and subject to change!</strong></h2>
+<strong>If you're a minor, it is against the rules and law to play on this server. If you are incapable of tolerating furries, this is not the server for you.</strong><br>
+This server expects medium to high roleplay from its players. We are flexible than most servers, however, we have higher expectations in turn. Once you've settled into the community, criminal activity will be tolerated within 
+reasonable bounds as long as it encourages roleplaying, not mechanical combat or griefing. IC conflict is encouraged, however, certain extreme acts may require the permission of the other party or appropriate escalation. 
+
+When in doubt, consult the administration.<br>
+Discord Link: https://discord.gg/6RpdCgR
+
+<i>This server is running Shadow Station's modification of the SS13 code.</i>
+

@@ -34,5 +34,8 @@ map deltastation
 	minplayers 50
 endmap
 
-map runtimestation
+map kilostation
 endmap
+
+#map runtimestation
+#endmap
