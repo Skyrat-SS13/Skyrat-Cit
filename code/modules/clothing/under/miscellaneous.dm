@@ -1,3 +1,10 @@
+/obj/item/clothing/under/permit
+	name = "public nudity permit"
+	desc = "This permit entitles the bearer to conduct their duties without a uniform as long as their genitalia is not in full sight."
+	icon = 'icons/obj/card_cit.dmi'
+	icon_state = "permit-civilian"
+	body_parts_covered = 0
+
 /obj/item/clothing/under/pj/red
 	name = "red pj's"
 	desc = "Sleepwear."
