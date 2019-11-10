@@ -1593,7 +1593,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(new_mutantcolor == "#000000")
 							features["mcolor"] = pref_species.default_color
 							update_preview_icon()
-						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#202020")[3]) // mutantcolors must be bright, but only if they affect the skin
+						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#000000")[3]) 0
 							features["mcolor"] = sanitize_hexcolor(new_mutantcolor)
 							update_preview_icon()
 						else
@@ -1619,7 +1619,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(new_mutantcolor == "#000000")
 							features["mcolor3"] = pref_species.default_color
 							update_preview_icon()
-						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#202020")[3]) // mutantcolors must be bright, but only if they affect the skin
+						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#000000")[3]) // mutantcolors must be bright, but only if they affect the skin
 							features["mcolor3"] = sanitize_hexcolor(new_mutantcolor)
 							update_preview_icon()
 						else
@@ -1854,7 +1854,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/temp_hsv = RGBtoHSV(new_cockcolor)
 						if(new_cockcolor == "#000000")
 							features["cock_color"] = pref_species.default_color
-						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#202020")[3])
+						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#000000")[3])
 							features["cock_color"] = sanitize_hexcolor(new_cockcolor)
 						else
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -1876,7 +1876,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/temp_hsv = RGBtoHSV(new_ballscolor)
 						if(new_ballscolor == "#000000")
 							features["balls_color"] = pref_species.default_color
-						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#202020")[3])
+						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#000000")[3])
 							features["balls_color"] = sanitize_hexcolor(new_ballscolor)
 						else
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -1898,7 +1898,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_egg_color = input(user, "Egg Color:", "Character Preference") as color|null
 					if(new_egg_color)
 						var/temp_hsv = RGBtoHSV(new_egg_color)
-						if(ReadHSV(temp_hsv)[3] >= ReadHSV("#202020")[3])
+						if(ReadHSV(temp_hsv)[3] >= ReadHSV("#000000")[3])
 							features["eggsack_egg_color"] = sanitize_hexcolor(new_egg_color)
 						else
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -1921,7 +1921,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/temp_hsv = RGBtoHSV(new_breasts_color)
 						if(new_breasts_color == "#000000")
 							features["breasts_color"] = pref_species.default_color
-						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#202020")[3])
+						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#000000")[3])
 							features["breasts_color"] = sanitize_hexcolor(new_breasts_color)
 						else
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -1938,7 +1938,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/temp_hsv = RGBtoHSV(new_vagcolor)
 						if(new_vagcolor == "#000000")
 							features["vag_color"] = pref_species.default_color
-						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#202020")[3])
+						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#000000")[3])
 							features["vag_color"] = sanitize_hexcolor(new_vagcolor)
 						else
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
