@@ -1593,7 +1593,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(new_mutantcolor == "#000000")
 							features["mcolor"] = pref_species.default_color
 							update_preview_icon()
-						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#000000")[3]) 0
+						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#000000")[3])
 							features["mcolor"] = sanitize_hexcolor(new_mutantcolor)
 							update_preview_icon()
 						else
