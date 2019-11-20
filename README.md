@@ -1,5 +1,3 @@
-
-##Shadow Station<BR>
 Forked from Citadel Station 13 and Based/maintained from Citadel Station 13 & /tg/station.<BR>
 
 [![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/pretty-risque.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](http://forthebadge.com)
