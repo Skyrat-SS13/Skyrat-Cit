@@ -263,3 +263,8 @@
 
 #define PULL_PRONE_SLOWDOWN 0.6
 #define HUMAN_CARRY_SLOWDOWN 0
+
+//How many pixels to cosmetically move victims of various grab levels
+#define GRAB_PIXEL_SHIFT_PASSIVE 6
+#define GRAB_PIXEL_SHIFT_AGGRESSIVE 12
+#define GRAB_PIXEL_SHIFT_NECK 16
