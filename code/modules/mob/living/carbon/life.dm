@@ -549,7 +549,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		handle_hallucinations()
 
 	if(drunkenness)
-		drunkenness = max(drunkenness - (drunkenness * 0.04), 0)
+		drunkenness = max(drunkenness - (drunkenness * 0.01), 0)
 		if(drunkenness >= 6)
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "drunk", /datum/mood_event/drunk)
 			jitteriness = max(jitteriness - 3, 0)
