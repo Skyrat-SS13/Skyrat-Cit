@@ -574,7 +574,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 						SSresearch.science_tech.remove_point_list(list(TECHWEB_POINT_TYPE_GENERIC = BALLMER_POINTS))
 						say(pick(GLOB.ballmer_windows_me_msg), forced = "ballmer")
 
-		if(drunkenness >= 41)
+		if(drunkenness >= 51)
 			if(prob(25))
 				confused += 2
 			Dizzy(10)
@@ -582,28 +582,28 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 				adjustBruteLoss(-0.3, FALSE)
 				adjustFireLoss(-0.15, FALSE)
 
-		if(drunkenness >= 61)
+		if(drunkenness >= 71)
 			if(prob(5))
 				confused += 10
 				vomit()
 			Dizzy(25)
 
-		if(drunkenness >= 71)
+		if(drunkenness >= 81)
 			if(prob(50))
 				blur_eyes(5)
 			if(has_trait(TRAIT_DRUNK_HEALING))
 				adjustBruteLoss(-0.4, FALSE)
 				adjustFireLoss(-0.2, FALSE)
 
-		if(drunkenness >= 91)
+		if(drunkenness >= 101)
 			blur_eyes(5)
 
-		if(drunkenness >= 101)
+		if(drunkenness >= 125)
 			adjustToxLoss(0.2)
 			if(prob(5) && !stat)
 				to_chat(src, "<span class='warning'>Maybe you should lie down for a bit...</span>")
 
-		if(drunkenness >= 120)
+		if(drunkenness >= 151)
 			adjustBrainLoss(0.4, 60)
 			if(prob(20) && !stat)
 				if(SSshuttle.emergency.mode == SHUTTLE_DOCKED && is_station_level(z)) //QoL mainly
@@ -612,7 +612,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 					to_chat(src, "<span class='warning'>Just a quick nap...</span>")
 					Sleeping(900)
 
-		if(drunkenness >= 150)
+		if(drunkenness >= 201)
 			adjustToxLoss(4) //Let's be honest you shouldn't be alive by now
 
 //used in human and monkey handle_environment()
