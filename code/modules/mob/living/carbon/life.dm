@@ -582,28 +582,28 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 				adjustBruteLoss(-0.3, FALSE)
 				adjustFireLoss(-0.15, FALSE)
 
-		if(drunkenness >= 51)
+		if(drunkenness >= 61)
 			if(prob(5))
 				confused += 10
 				vomit()
 			Dizzy(25)
 
-		if(drunkenness >= 61)
+		if(drunkenness >= 71)
 			if(prob(50))
 				blur_eyes(5)
 			if(has_trait(TRAIT_DRUNK_HEALING))
 				adjustBruteLoss(-0.4, FALSE)
 				adjustFireLoss(-0.2, FALSE)
 
-		if(drunkenness >= 71)
+		if(drunkenness >= 91)
 			blur_eyes(5)
 
-		if(drunkenness >= 81)
+		if(drunkenness >= 101)
 			adjustToxLoss(0.2)
 			if(prob(5) && !stat)
 				to_chat(src, "<span class='warning'>Maybe you should lie down for a bit...</span>")
 
-		if(drunkenness >= 91)
+		if(drunkenness >= 120)
 			adjustBrainLoss(0.4, 60)
 			if(prob(20) && !stat)
 				if(SSshuttle.emergency.mode == SHUTTLE_DOCKED && is_station_level(z)) //QoL mainly
@@ -612,7 +612,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 					to_chat(src, "<span class='warning'>Just a quick nap...</span>")
 					Sleeping(900)
 
-		if(drunkenness >= 101)
+		if(drunkenness >= 150)
 			adjustToxLoss(4) //Let's be honest you shouldn't be alive by now
 
 //used in human and monkey handle_environment()
