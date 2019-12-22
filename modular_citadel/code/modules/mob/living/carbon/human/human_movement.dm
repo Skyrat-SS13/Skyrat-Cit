@@ -13,7 +13,7 @@
 			Knockdown(80)
 
 /mob/living/carbon/human/movement_delay()
-	. = 0.2
+	. = 0.15
 	if(!resting && m_intent == MOVE_INTENT_RUN && !sprinting)
 		. += 1
 	if(wrongdirmovedelay)
