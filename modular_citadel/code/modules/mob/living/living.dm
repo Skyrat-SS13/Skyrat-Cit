@@ -1,8 +1,8 @@
 /mob/living
 	var/recoveringstam = FALSE
 	var/incomingstammult = 1
-	var/bufferedstam = -80 // Should be positive but is negative to give additional buffer to stamina loss
-	var/stambuffer = 80
+	var/bufferedstam = -100 // Should be positive but is negative to give additional buffer to stamina loss
+	var/stambuffer = 100
 	var/stambufferregentime
 	var/attemptingstandup = FALSE
 	var/intentionalresting = FALSE
