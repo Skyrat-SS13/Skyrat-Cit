@@ -5,7 +5,7 @@
 	var/oldpseudoheight = pseudo_z_axis
 	. = ..()
 	if(. && sprinting && !(movement_type & FLYING) && canmove && !resting && m_intent == MOVE_INTENT_RUN && has_gravity(loc) && !pulledby)
-		adjustStaminaLossBuffered(0.3)
+		adjustStaminaLossBuffered(0.6)
 		if((oldpseudoheight - pseudo_z_axis) >= 8)
 			to_chat(src, "<span class='warning'>You trip off of the elevated surface!</span>")
 			for(var/obj/item/I in held_items)
@@ -13,7 +13,7 @@
 			Knockdown(80)
 
 /mob/living/carbon/human/movement_delay()
-	. = 0.15
+	. = 0.2
 	if(!resting && m_intent == MOVE_INTENT_RUN && !sprinting)
 		. += 1
 	if(wrongdirmovedelay)
