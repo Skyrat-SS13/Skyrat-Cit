@@ -15,7 +15,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 	var/antag_memory = ""//These will be removed with antag datum
 	var/antag_moodlet //typepath of moodlet that the mob will gain with their status
 	var/can_hijack = HIJACK_NEUTRAL //If these antags are alone on shuttle hijack happens.
-
+	
 	//Antag panel properties
 	var/show_in_antagpanel = TRUE	//This will hide adding this antag type in antag panel, use only for internal subtypes that shouldn't be added directly but still show if possessed by mind
 	var/antagpanel_category = "Uncategorized"	//Antagpanel will display these together, REQUIRED
@@ -131,8 +131,18 @@ GLOBAL_LIST_EMPTY(antagonists)
 
 	report += printplayer(owner)
 
-	if(objectives.len)
-		report += printobjectives(objectives)
+	var/objectives_complete = TRUE
+	if(owner.objectives.len)
+		report += printobjectives(owner)
+		for(var/datum/objective/objective in owner.objectives)
+			if(!objective.check_completion())
+				objectives_complete = FALSE
+				break
+
+	if(owner.objectives.len == 0 || objectives_complete)
+		report += "<span class='greentext big'>The [name] was successful!</span>"
+	else
+		report += "<span class='redtext big'>The [name] has failed!</span>"
 
 	return report.Join("<br>")
 
