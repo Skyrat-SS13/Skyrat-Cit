@@ -1,3 +1,5 @@
+var/nuke_ticker = 0
+	
 /obj/machinery/nuclearbomb
 	name = "nuclear fission explosive"
 	desc = "You probably shouldn't stick around to see if this is armed."
@@ -6,9 +8,7 @@
 	anchored = FALSE
 	density = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	
-	
-	var/nuke_ticker = 0
+
 	var/timer_set = 90
 	var/default_timer_set = 90
 	var/minimum_timer_set = 90
