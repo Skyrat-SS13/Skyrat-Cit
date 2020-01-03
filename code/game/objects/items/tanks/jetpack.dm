@@ -152,7 +152,7 @@
 	icon_state = "jetpack-sec"
 	item_state = "jetpack-sec"
 
-/obj/item/tank/jetpack/flightpack
+/obj/item/tank/jetpack/suit/flightpack
 	name = "ion jetpack"
 	desc = "An experimental jetpack that uses ion pulse energy, allowing for powered flight without the need for compressed gas. It still has a small oxygen tank as a source of internals."
 	icon = 'icons/obj/clothing/flightsuit.dmi'
@@ -165,7 +165,7 @@
 	var/obj/item/stock_parts/cell/cell
 	var/todrain = 0
 
-/obj/item/tank/jetpack/flightpack/cycle(mob/user)
+/obj/item/tank/jetpack/suit/flightpack/cycle(mob/user)
 	full_speed = FALSE
 	if(opened)
 		to_chat(user, "<span class='warning'>Secure the battery compartment before turning on [src]!</span>")
@@ -176,7 +176,7 @@
 			full_speed = TRUE
 	..()
 
-/obj/item/tank/jetpack/flightpack/attackby(obj/item/W, mob/user)
+/obj/item/tank/jetpack/suit/flightpack/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/screwdriver))
 		W.play_tool_sound(src)
 		if(!opened)
@@ -212,7 +212,7 @@
 				to_chat(user, "<span class='notice'>[src] already has \a [cell] installed!</span>")
 				return
 
-/obj/item/tank/jetpack/flightpack/allow_thrust(mob/living/user)
+/obj/item/tank/jetpack/suit/flightpack/allow_thrust(mob/living/user)
 	if(!on)
 		return
 	if(!cell.charge)
