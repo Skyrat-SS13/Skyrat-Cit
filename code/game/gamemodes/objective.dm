@@ -123,11 +123,12 @@ GLOBAL_LIST_EMPTY(objectives)
 				var/obj/O = new eq_path
 				H.equip_in_one_of_slots(O, slots)
 
+
 /datum/objective/assassinate
 	var/target_role_type=0
 	martyr_compatible = 1
 
-/datum/objective/assassinate/find_target_by_role(role, role_type=0, invert=0)
+/datum/objective/assassinate/find_target_by_role(role, role_type=1, invert=0)
 	if(!invert)
 		target_role_type = role_type
 	..()
@@ -150,6 +151,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	..()
 	if(target && !target.current)
 		explanation_text = "Assassinate [target.name], who was obliterated"
+
 
 /datum/objective/mutiny
 	var/target_role_type=0
