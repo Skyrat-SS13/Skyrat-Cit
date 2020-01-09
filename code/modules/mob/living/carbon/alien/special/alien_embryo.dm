@@ -63,7 +63,7 @@
 
 
 
-/obj/item/organ/body_egg/alien_embryo/proc/AttemptGrow(gib_on_success=TRUE)
+/obj/item/organ/body_egg/alien_embryo/proc/AttemptGrow(gib_on_success=FALSE)
 	if(!owner || bursting)
 		return
 
@@ -106,8 +106,8 @@
 		new_xeno.visible_message("<span class='danger'>[new_xeno] bursts out of [owner] in a shower of gore!</span>", "<span class='userdanger'>You exit [owner], your previous host.</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
 		owner.gib(TRUE)
 	else
-		new_xeno.visible_message("<span class='danger'>[new_xeno] wriggles out of [owner]!</span>", "<span class='userdanger'>You exit [owner], your previous host.</span>")
-		owner.adjustBruteLoss(40)
+		new_xeno.visible_message("<span class='danger'>[new_xeno] wriggles out of [owner]'s throat!</span>", "<span class='userdanger'>You exit [owner], your previous host.</span>")
+		owner.adjustBruteLoss(60)
 		owner.cut_overlay(overlay)
 	qdel(src)
 
