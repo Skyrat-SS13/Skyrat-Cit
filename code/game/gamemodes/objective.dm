@@ -123,24 +123,27 @@ GLOBAL_LIST_EMPTY(objectives)
 				var/obj/O = new eq_path
 				H.equip_in_one_of_slots(O, slots)
 
-
+// Convert assassinate to non-lethal objective as a stopgap.
 /datum/objective/assassinate
-	var/target_role_type=1
+	var/target_role_type=0
 	martyr_compatible = 1
 
-/datum/objective/assassinate/find_target_by_role(role, role_type=1, invert=0)
+/datum/objective/assassinate/find_target_by_role(role, role_type=0, invert=0)
 	if(!invert)
 		target_role_type = role_type
 	..()
 	return target
-
+	
 /datum/objective/assassinate/check_completion()
-	return !considered_alive(target) || considered_afk(target)
+	if(!target || !considered_alive(target) || considered_afk(target))
+		return TRUE
+	var/turf/T = get_turf(target.current)
+	return !T || !is_station_level(T.z)
 
 /datum/objective/assassinate/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Assassinate [target.name], the [!target_role_type ? target.assigned_role : target.special_role]."
+		explanation_text = "Teach [target.name], the [!target_role_type ? target.assigned_role : target.special_role], a lesson."
 	else
 		explanation_text = "Free Objective"
 
@@ -150,7 +153,7 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/assassinate/internal/update_explanation_text()
 	..()
 	if(target && !target.current)
-		explanation_text = "Assassinate [target.name], who was obliterated"
+		explanation_text = "Teach [target.name] a lesson, who was obliterated"
 
 
 /datum/objective/mutiny
