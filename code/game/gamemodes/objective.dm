@@ -125,10 +125,10 @@ GLOBAL_LIST_EMPTY(objectives)
 
 
 /datum/objective/assassinate
-	var/target_role_type=0
+	var/target_role_type=1
 	martyr_compatible = 1
 
-/datum/objective/assassinate/find_target_by_role(role, role_type=1, invert=0)
+/datum/objective/assassinate/find_target_by_role(role, role_type=0, invert=0)
 	if(!invert)
 		target_role_type = role_type
 	..()
