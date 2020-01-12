@@ -311,3 +311,4 @@
 		var/obj/item/clothing/suit/space/hardsuit/C = wear_suit
 		J = C.jetpack
 	return J
+//Adding a comment here because Travis is shit. It broke, and this needs re-evaluation.
