@@ -1542,3 +1542,4 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	for(var/i in L)
 		if(condition.Invoke(i))
 			. |= i
+//Adding a comment here because Travis is shit. It broke, and this needs re-evaluation.
