@@ -2,8 +2,8 @@
 	name = "Lone Operative"
 	typepath = /datum/round_event/ghost_role/operative
 	weight = 0 //Admin only
-	min_players = 15
-	max_occurrences = 1
+	min_players = 20
+	max_occurrences = 0
 
 /datum/round_event/ghost_role/operative
 	minimum_required = 1
