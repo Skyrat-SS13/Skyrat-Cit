@@ -1,6 +1,3 @@
-
-var/nuke_ticker = 0
-
 /obj/machinery/nuclearbomb
 	name = "nuclear fission explosive"
 	desc = "You probably shouldn't stick around to see if this is armed."
@@ -570,6 +567,7 @@ This is here to make the tiles around the station mininuke change when it's arme
 	var/fake = FALSE
 	var/turf/lastlocation
 	var/last_disk_move
+	var/nuke_ticker = 0
 
 /obj/item/disk/nuclear/Initialize()
 	. = ..()
@@ -583,6 +581,7 @@ This is here to make the tiles around the station mininuke change when it's arme
 	AddComponent(/datum/component/stationloving, !fake)
 
 /obj/item/disk/nuclear/process()
+
 	if(fake)
 		STOP_PROCESSING(SSobj, src)
 		CRASH("A fake nuke disk tried to call process(). Who the fuck and how the fuck")
