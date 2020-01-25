@@ -8,7 +8,7 @@
 	job_rank = ROLE_TRAITOR
 	antag_moodlet = /datum/mood_event/focused
 	var/special_role = ROLE_TRAITOR
-	var/employer = "The Syndicate"
+	var/employer = "You have motives outside the interests of Nanotrasen. Your goals are influenced by whatever this motive is. You, criminal elements, a rival faction, or the Syndicate itself"
 	var/give_objectives = TRUE
 	var/should_give_codewords = TRUE
 	var/should_equip = TRUE
@@ -245,14 +245,14 @@
 		return
 	var/mob/traitor_mob=owner.current
 
-	to_chat(traitor_mob, "<U><B>The Syndicate provided you with the following information on how to identify their agents:</B></U>")
+	to_chat(traitor_mob, "<U><B>The criminal underworld is wide and varied. Many common words have been adopted as code phrases to identify others within the circles.:</B></U>")
 	to_chat(traitor_mob, "<B>Code Phrase</B>: <span class='danger'>[GLOB.syndicate_code_phrase]</span>")
 	to_chat(traitor_mob, "<B>Code Response</B>: <span class='danger'>[GLOB.syndicate_code_response]</span>")
 
 	antag_memory += "<b>Code Phrase</b>: [GLOB.syndicate_code_phrase]<br>"
 	antag_memory += "<b>Code Response</b>: [GLOB.syndicate_code_response]<br>"
 
-	to_chat(traitor_mob, "Use the code words in the order provided, during regular conversation, to identify other agents. Proceed with caution, however, as everyone is a potential foe.")
+	to_chat(traitor_mob, "Use the code words in the order provided, during regular conversation, to identify potential allies. Proceed with caution, however, as everyone is a potential foe.")
 
 /datum/antagonist/traitor/proc/add_law_zero()
 	var/mob/living/silicon/ai/killer = owner.current
