@@ -165,7 +165,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A small, easily concealable handgun that uses 10mm auto rounds in 8-round magazines and is compatible \
 			with suppressors."
 	item = /obj/item/gun/ballistic/automatic/pistol
-	cost = 7
+	cost = 6 //Stetch does 30 brute, and while the mags are reloadable and easier to refill than the revolver, this thing's not worth 7tc. Dropping it to 6.
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
 
 /datum/uplink_item/dangerous/revolver
@@ -252,7 +252,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 		infinite number of bolts, but takes time to automatically recharge \
 		after each shot."
 	item = /obj/item/gun/energy/kinetic_accelerator/crossbow
-	cost = 12
+	cost = 10 //This thing was an absolute powerhouse when combined with the esword on TG in ye olden days, but right now it's a husk of it's former glory, especially with the stamina system in play and the fact it doesn't mute.
 	surplus = 50
 	exclude_modes = list(/datum/game_mode/nuclear)
 
@@ -406,7 +406,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "Though capable of near sorcerous feats via use of hardlight holograms and nanomachines, they require an \
 			organic host as a home base and source of fuel."
 	item = /obj/item/storage/box/syndie_kit/guardian
-	cost = 18
+	cost = 15 //You need a ghost to help you, which isn't going to always happen or work out. On top of that, 18 is ridiculous for something that dusts you when you die and is lost upon death. 15tc for this.
 	surplus = 0
 	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
 	player_minimum = 20
@@ -474,7 +474,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A speed loader that contains seven additional .357 Magnum rounds; usable with the Syndicate revolver. \
 			For when you really need a lot of things dead."
 	item = /obj/item/ammo_box/a357
-	cost = 4
+	cost = 2 //4tc for something you can print at the autolathes??? Dropping this to 2.
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
 
 /datum/uplink_item/ammo/shotgun
@@ -695,7 +695,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "This scroll contains the secrets of an ancient martial arts technique. You will master unarmed combat, \
 			deflecting all ranged weapon fire, but you also refuse to use dishonorable ranged weaponry."
 	item = /obj/item/book/granter/martial/carp
-	cost = 17
+	cost = 18 //Projectile immunity, instant aggro grab, and deadly combos. 17 is too damn low, man. Making this 18.
 	surplus = 0
 	player_minimum = 15
 	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
@@ -736,7 +736,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			The pen holds one dose of the mixture, and can be refilled. Note that before the target \
 			falls asleep, they will be able to move and act."
 	item = /obj/item/pen/sleepy
-	cost = 4
+	cost = 5 //Mute and knockout after a few seconds AND refillable with 40u of any chems you want for an instant, silent injection. Bumping this to 5tc from 4.
 	exclude_modes = list(/datum/game_mode/nuclear)
 
 /datum/uplink_item/stealthy_weapons/soap
@@ -744,7 +744,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A sinister-looking surfactant used to clean blood stains to hide murders and prevent DNA analysis. \
 			You can also drop it underfoot to slip people."
 	item = /obj/item/soap/syndie
-	cost = 1
+	cost = 1 //Let's be real, slip combat is the only way traitors can survive most fights in the end. Taking this down to 1tc from 3 because the cleaning functions are a bit overrated.
 	surplus = 50
 
 /datum/uplink_item/stealthy_weapons/traitor_chem_bottle
@@ -785,7 +785,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "Fitted for use on any small caliber weapon with a threaded barrel, this suppressor will silence the \
 			shots of the weapon for increased stealth and superior ambushing capability."
 	item = /obj/item/suppressor
-	cost = 3
+	cost = 1 //Excuse me, but 3tc for something that is borderline useless? Why?
 	surplus = 10
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
 
@@ -794,7 +794,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A pizza box with a bomb cunningly attached to the lid. The timer needs to be set by opening the box; afterwards, \
 			opening the box again will trigger the detonation after the timer has elapsed. Comes with free pizza, for you or your target!"
 	item = /obj/item/pizzabox/bomb
-	cost = 6
+	cost = 4 //Too situational and gimmicky for 6tc. Bringing it to 4.
 	surplus = 8
 
 /datum/uplink_item/stealthy_weapons/dehy_carp
@@ -853,7 +853,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			You will receive the unlock code upon activating the virus, and the new uplink may be charged with \
 			telecrystals normally."
 	item = /obj/item/cartridge/virus/frame
-	cost = 4
+	cost = 2 //Another way too situational item that doesn't deserve a high cost. Bumping it from 4tc to 2.
 	restricted = TRUE
 
 /datum/uplink_item/stealthy_tools/agent_card
@@ -871,7 +871,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "Projects an image across a user, disguising them as an object scanned with it, as long as they don't \
 			move the projector from their hand. Disguised users move slowly, and projectiles pass over them."
 	item = /obj/item/chameleon
-	cost = 7
+	cost = 6 //This thing's mega obvious and loud. 7tc is too much. Dropping it to 6.
 
 /datum/uplink_item/stealthy_tools/camera_bug
 	name = "Camera Bug"
@@ -895,7 +895,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "Stimpacks, the tool of many great heroes, make you nearly immune to stuns and knockdowns for about \
 			5 minutes after injection."
 	item = /obj/item/reagent_containers/syringe/stimulants
-	cost = 5
+	cost = 6 //Five minutes for mega speed, borderline stun/knockdown immunity, and no real stamina loss is way too much for 5tc. I don't wanna go too high though, so 6tc seems fair.
 	surplus = 90
 
 /datum/uplink_item/stealthy_tools/mulligan
@@ -903,7 +903,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "Screwed up and have security on your tail? This handy syringe will give you a completely new identity \
 			and appearance."
 	item = /obj/item/reagent_containers/syringe/mulligan
-	cost = 4
+	cost = 2 //>mulligan when the AI is crewsimov lmao. Making this 2tc from 4.
 	surplus = 30
 	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
 
@@ -1008,7 +1008,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "The Syndicate surgery duffel bag is a toolkit containing all newest surgery tools, surgical drapes, \
 			a Syndicate brand MMI, a straitjacket, a muzzle, and a full Syndicate Combat Medic Kit."
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery_adv
-	cost = 15 //Mite be to cheap
+	cost = 10 //Mite be to cheap ; No, 15's too expensive for what's just the normal surgery kit plus a medkit. Making it 10.
 
 /datum/uplink_item/device_tools/military_belt
 	name = "Chest Rig"
@@ -1033,7 +1033,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			of the originals, these inferior copies are still quite useful, being able to provide \
 			both weal and woe on the battlefield, even if they do occasionally bite off a finger."
 	item = /obj/item/storage/book/bible/syndicate
-	cost = 9
+	cost = 5 //Dude, this thing's useless. 9 is far too much since it doesn't self heal.
 
 /datum/uplink_item/device_tools/thermal
 	name = "Thermal Imaging Glasses"
@@ -1050,7 +1050,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			such as AI units and cyborgs, over their private binary channel. Caution should \
 			be taken while doing this, as unless they are allied with you, they are programmed to report such intrusions."
 	item = /obj/item/encryptionkey/binary
-	cost = 5
+	cost = 3 // 5tc for a big neon sign saying you're valid? C'mon now. Dropping this to 3
 	surplus = 75
 	restricted = TRUE
 
@@ -1077,7 +1077,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "When used with an upload console, this module allows you to upload priority laws to an artificial intelligence. \
 			Be careful with wording, as artificial intelligences may look for loopholes to exploit."
 	item = /obj/item/aiModule/syndicate
-	cost = 9
+	cost = 10 //Bit too powerful, all things considering. One extra TC for this boy seems reasonable.
 
 /datum/uplink_item/device_tools/briefcase_launchpad
 	name = "Briefcase Launchpad"
@@ -1085,7 +1085,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			Also includes a remote control, disguised as an ordinary folder. Touch the briefcase with the remote to link it."
 	surplus = 0
 	item = /obj/item/storage/briefcase/launchpad
-	cost = 6
+	cost = 8 //Bruh, this thing's way too robust for 6tc.  Bumping to 8.
 
 /datum/uplink_item/device_tools/magboots
 	name = "Blood-Red Magboots"
@@ -1217,9 +1217,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "Syndicate Sentience Potion"
 	item = /obj/item/slimepotion/slime/sentience/nuclear
 	desc = "A potion recovered at great risk by undercover syndicate operatives and then subsequently modified with syndicate technology. Using it will make any animal sentient, and bound to serve you, as well as implanting an internal radio for communication and an internal ID card for opening doors."
-	cost = 4
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
-	restricted = TRUE
+	cost = 3 // Bit too situational to be worth 4tc. Knocking it to 3.
 
 /datum/uplink_item/device_tools/telecrystal
 	name = "Raw Telecrystal"
@@ -1455,7 +1453,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/role_restricted/goldenbox
 	name = "Gold Toolbox"
-	desc = "A gold planted plastitanium toolbox loaded with tools. Comes with a set of AI detection multi-tool and a pare of combat gloves."
+	desc = "A gold planted plastitanium toolbox loaded with tools. Comes with a set of AI detection multi-tool and a pair of combat gloves."
 	item = /obj/item/storage/toolbox/gold_real
 	cost = 5 // Has synda tools + gloves + a robust weapon
 	restricted_roles = list("Assistant", "Curator") //Curator do to being made of gold - It fits the theme
@@ -1466,7 +1464,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	Insert into an Operating Console to enable the procedure."
 	item = /obj/item/disk/surgery/brainwashing
 	restricted_roles = list("Medical Doctor")
-	cost = 5
+	cost = 3 //Dude, you're not gonna have anything short of a rough time brainwashing people. 5 is too much.
 
 /datum/uplink_item/role_restricted/haunted_magic_eightball
 	name = "Haunted Magic Eightball"
@@ -1494,7 +1492,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "Magillitis Serum Autoinjector"
 	desc = "A single-use autoinjector which contains an experimental serum that causes rapid muscular growth in Hominidae. Side-affects may include hypertrichosis, violent outbursts, and an unending affinity for bananas."
 	item = /obj/item/reagent_containers/hypospray/magillitis
-	cost = 15
+	cost = 8 //You become a gorilla, but you're weak as shit and unless you got a pre-scan at cloning you're kinda fucked. I've seen this in action and tested it, it's not even worth 8tc, let alone 15, but whatever.
 	restricted_roles = list("Geneticist", "Chief Medical Officer")
 
 /datum/uplink_item/role_restricted/pressure_mod
@@ -1546,7 +1544,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/vehicle/sealed/car/clowncar
 	cost = 15
 	restricted_roles = list("Clown")
-
 
 // Pointless
 /datum/uplink_item/badass
