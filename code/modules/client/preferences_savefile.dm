@@ -250,6 +250,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Character
 	S["real_name"]			>> real_name
+//	S["nameless"]			>> nameless
 	S["custom_species"]		>> custom_species
 	S["name_is_always_random"] >> be_random_name
 	S["body_is_always_random"] >> be_random_body
