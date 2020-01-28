@@ -315,6 +315,8 @@
 		/obj/item/assembly/signaler/cyborg,
 		/obj/item/areaeditor/blueprints/cyborg,
 		/obj/item/electroadaptive_pseudocircuit,
+		/obj/item/electronics/airlock,
+		/obj/item/pen,
 		/obj/item/lightreplacer/cyborg,
 		/obj/item/stack/sheet/metal/cyborg,
 		/obj/item/stack/sheet/glass/cyborg,
