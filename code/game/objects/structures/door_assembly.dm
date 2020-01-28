@@ -151,11 +151,14 @@
 		user.visible_message("[user] installs the electronics into the airlock assembly.", \
 							"<span class='notice'>You start to install electronics into the airlock assembly...</span>")
 		if(do_after(user, 40, target = src))
-			if( state != AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS )
-				return
-			if(!user.transferItemToLoc(W, src))
-				return
-
+			if(iscarbon(user))
+				if( state != AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS )
+					return
+				if(!user.transferItemToLoc(W, src))
+					return
+			else if(issilicon(user))
+				if( state != AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS )
+					return
 			to_chat(user, "<span class='notice'>You install the airlock electronics.</span>")
 			state = AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER
 			name = "near finished airlock assembly"
@@ -230,29 +233,53 @@
 
 		if(W.use_tool(src, user, 40, volume=100))
 			if(loc && state == AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER)
-				to_chat(user, "<span class='notice'>You finish the airlock.</span>")
-				var/obj/machinery/door/airlock/door
-				if(glass)
-					door = new glass_type( loc )
-				else
-					door = new airlock_type( loc )
-				door.setDir(dir)
-				door.unres_sides = electronics.unres_sides
-				//door.req_access = req_access
-				door.electronics = electronics
-				door.heat_proof = heat_proof_finished
-				if(electronics.one_access)
-					door.req_one_access = electronics.accesses
-				else
-					door.req_access = electronics.accesses
-				if(created_name)
-					door.name = created_name
-				else
-					door.name = base_name
-				door.previous_airlock = previous_assembly
-				electronics.forceMove(door)
-				door.update_icon()
-				qdel(src)
+				if(iscarbon(user))
+					to_chat(user, "<span class='notice'>You finish the airlock.</span>")
+					var/obj/machinery/door/airlock/door
+					if(glass)
+						door = new glass_type( loc )
+					else
+						door = new airlock_type( loc )
+					door.setDir(dir)
+					door.unres_sides = electronics.unres_sides
+					//door.req_access = req_access
+					door.electronics = electronics
+					door.heat_proof = heat_proof_finished
+					if(electronics.one_access)
+						door.req_one_access = electronics.accesses
+					else
+						door.req_access = electronics.accesses
+					if(created_name)
+						door.name = created_name
+					else
+						door.name = base_name
+					door.previous_airlock = previous_assembly
+					electronics.forceMove(door)
+					door.update_icon()
+					qdel(src)
+				else if(issilicon(user))
+					to_chat(user, "<span class='notice'>You finish the airlock.</span>")
+					var/obj/machinery/door/airlock/door
+					if(glass)
+						door = new glass_type( loc )
+					else
+						door = new airlock_type( loc )
+					door.setDir(dir)
+					door.unres_sides = electronics.unres_sides
+					//door.req_access = req_access
+					door.electronics = electronics
+					door.heat_proof = heat_proof_finished
+					if(electronics.one_access)
+						door.req_one_access = electronics.accesses
+					else
+						door.req_access = electronics.accesses
+					if(created_name)
+						door.name = created_name
+					else
+						door.name = base_name
+					door.previous_airlock = previous_assembly
+					door.update_icon()
+					qdel(src)
 	else
 		return ..()
 	update_name()

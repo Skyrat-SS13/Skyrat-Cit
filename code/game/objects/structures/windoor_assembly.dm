@@ -202,21 +202,31 @@
 
 			//Adding airlock electronics for access. Step 6 complete.
 			else if(istype(W, /obj/item/electronics/airlock))
-				if(!user.transferItemToLoc(W, src))
-					return
-				W.play_tool_sound(src, 100)
-				user.visible_message("[user] installs the electronics into the airlock assembly.",
-					"<span class='notice'>You start to install electronics into the airlock assembly...</span>")
-
-				if(do_after(user, 40, target = src))
-					if(!src || electronics)
-						W.forceMove(drop_location())
+				if(iscarbon(user))
+					if(!user.transferItemToLoc(W, src))
 						return
-					to_chat(user, "<span class='notice'>You install the airlock electronics.</span>")
-					name = "near finished windoor assembly"
-					electronics = W
-				else
-					W.forceMove(drop_location())
+					W.play_tool_sound(src, 100)
+					user.visible_message("[user] installs the electronics into the airlock assembly.",
+						"<span class='notice'>You start to install electronics into the airlock assembly...</span>")
+
+					if(do_after(user, 40, target = src))
+						if(!src || electronics)
+							W.forceMove(drop_location())
+							return
+						to_chat(user, "<span class='notice'>You install the airlock electronics.</span>")
+						name = "near finished windoor assembly"
+						electronics = W
+					else
+						W.forceMove(drop_location())
+				else if(issilicon(user))
+					W.play_tool_sound(src, 100)
+					user.visible_message("[user] installs the electronics into the airlock assembly.",
+						"<span class='notice'>You start to install electronics into the airlock assembly...</span>")
+
+					if(do_after(user, 40, target = src))
+						to_chat(user, "<span class='notice'>You install the airlock electronics.</span>")
+						name = "near finished windoor assembly"
+						electronics = W
 
 			//Screwdriver to remove airlock electronics. Step 6 undone.
 			else if(istype(W, /obj/item/screwdriver))
@@ -260,26 +270,47 @@
 					to_chat(user, "<span class='notice'>You finish the windoor.</span>")
 
 					if(secure)
-						var/obj/machinery/door/window/brigdoor/windoor = new /obj/machinery/door/window/brigdoor(loc)
-						if(facing == "l")
-							windoor.icon_state = "leftsecureopen"
-							windoor.base_state = "leftsecure"
-						else
-							windoor.icon_state = "rightsecureopen"
-							windoor.base_state = "rightsecure"
-						windoor.setDir(dir)
-						windoor.density = FALSE
-
-						if(electronics.one_access)
-							windoor.req_one_access = electronics.accesses
-						else
-							windoor.req_access = electronics.accesses
-						windoor.electronics = electronics
-						electronics.forceMove(windoor)
-						if(created_name)
-							windoor.name = created_name
-						qdel(src)
-						windoor.close()
+						if(iscarbon(user))
+							var/obj/machinery/door/window/brigdoor/windoor = new /obj/machinery/door/window/brigdoor(loc)
+							if(facing == "l")
+								windoor.icon_state = "leftsecureopen"
+								windoor.base_state = "leftsecure"
+							else
+								windoor.icon_state = "rightsecureopen"
+								windoor.base_state = "rightsecure"
+							windoor.setDir(dir)
+							windoor.density = FALSE
+	
+							if(electronics.one_access)
+								windoor.req_one_access = electronics.accesses
+							else
+								windoor.req_access = electronics.accesses
+							windoor.electronics = electronics
+							electronics.forceMove(windoor)
+							if(created_name)
+								windoor.name = created_name
+							qdel(src)
+							windoor.close()
+						else if(issilicon(user))
+							var/obj/machinery/door/window/brigdoor/windoor = new /obj/machinery/door/window/brigdoor(loc)
+							if(facing == "l")
+								windoor.icon_state = "leftsecureopen"
+								windoor.base_state = "leftsecure"
+							else
+								windoor.icon_state = "rightsecureopen"
+								windoor.base_state = "rightsecure"
+							windoor.setDir(dir)
+							windoor.density = FALSE
+	
+							if(electronics.one_access)
+								windoor.req_one_access = electronics.accesses
+							else
+								windoor.req_access = electronics.accesses
+							windoor.electronics = electronics
+							if(created_name)
+								windoor.name = created_name
+							qdel(src)
+							windoor.close()
 
 
 					else
