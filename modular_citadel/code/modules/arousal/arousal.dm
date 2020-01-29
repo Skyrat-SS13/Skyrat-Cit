@@ -75,10 +75,11 @@
 	arousalloss = CLAMP(amount, min_arousal, max_arousal)
 	if(updating_arousal)
 		updatearousal()
-
+/*
 /mob/living/proc/getPercentAroused()
 	var/percentage = ((100 / max_arousal) * arousalloss)
 	return percentage
+*/
 
 /mob/living/proc/isPercentAroused(percentage)//returns true if the mob's arousal (measured in a percent of 100) is greater than the arg percentage.
 	if(!isnum(percentage) || percentage > 100 || percentage < 0)
