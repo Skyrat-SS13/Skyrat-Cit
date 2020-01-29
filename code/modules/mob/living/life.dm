@@ -1,6 +1,13 @@
 /mob/living/Life(seconds, times_fired)
 	set invisibility = 0
 
+	//lewd (decrements the cooldown for secks interactions)
+	/*
+	if(refactory_period)
+		refactory_period--
+	*/
+	//end of lewd
+
 	if(digitalinvis)
 		handle_diginvis() //AI becomes unable to see mob
 

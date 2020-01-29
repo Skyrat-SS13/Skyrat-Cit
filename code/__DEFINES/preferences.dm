@@ -71,3 +71,7 @@
 #define DB_FLAG_EXEMPT 1
 
 #define DEFAULT_CYBORG_NAME "Default Cyborg Name"
+
+
+//for interaction verbs
+#define VERB_CONSENT			(1<<1)

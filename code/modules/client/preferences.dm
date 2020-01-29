@@ -791,7 +791,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "</td>"
 
 			dat +="<td width='300px' height='300px' valign='top'>"
-			dat += "<h2>SDS Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
+			dat += "<h2>NEON Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
 			dat += "<b>Arousal:</b><a href='?_src_=prefs;preference=arousable'>[arousable == TRUE ? "Enabled" : "Disabled"]</a><BR>"
 			dat += "<b>Exhibitionist:</b><a href='?_src_=prefs;preference=exhibitionist'>[features["exhibitionist"] == TRUE ? "Yes" : "No"]</a><BR>"
 			dat += "<b>Voracious MediHound sleepers:</b> <a href='?_src_=prefs;preference=hound_sleeper'>[(cit_toggles & MEDIHOUND_SLEEPER) ? "Yes" : "No"]</a><br>"
@@ -802,6 +802,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Screen Shake:</b> <a href='?_src_=prefs;preference=screenshake'>[(screenshake==100) ? "Full" : ((screenshake==0) ? "None" : "[screenshake]")]</a><br>"
 			if (user && user.client && !user.client.prefs.screenshake==0)
 				dat += "<b>Damage Screen Shake:</b> <a href='?_src_=prefs;preference=damagescreenshake'>[(damagescreenshake==1) ? "On" : ((damagescreenshake==0) ? "Off" : "Only when down")]</a><br>"
+			dat += "<b>Allow Lewd Verbs:</b> <a href='?_src_=prefs;preference=verb_consent'>[(cit_toggles & VERB_CONSENT) ? "Yes":"No"]</a><br>"
+
 			dat += "<br>"
 			dat += "</td>"
 			dat += "</tr></table>"
@@ -2111,6 +2113,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("hear_midis")
 					toggles ^= SOUND_MIDI
+
+				if("verb_consent")
+					cit_toggles ^= VERB_CONSENT
 
 				if("lobby_music")
 					toggles ^= SOUND_LOBBY
