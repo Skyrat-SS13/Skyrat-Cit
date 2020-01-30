@@ -181,7 +181,10 @@
 			else
 				ae = electronics
 				electronics = null
-				ae.forceMove(src.loc)
+				if(iscarbon(user))
+					ae.forceMove(src.loc)
+				else
+					return
 
 	else if(istype(W, /obj/item/stack/sheet) && (!glass || !mineral))
 		var/obj/item/stack/sheet/G = W
