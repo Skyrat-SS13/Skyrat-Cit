@@ -94,7 +94,7 @@ mob/living/Initialize()
 		moan--
 	if(!is_muzzled())
 		visible_message("<font color=purple><B>\The [src]</B> [pick("moans", "moans in pleasure",)].</font>")
-		playsound(get_turf(src), "code/game/lewd/sound/interactions/moan_[gender == FEMALE ? "f" : "m"][rand(1, 7)].ogg", 70, 1, 0)
+		//playsound(get_turf(src), "code/game/lewd/sound/interactions/moan_[gender == FEMALE ? "f" : "m"][rand(1, 7)].ogg", 70, 1, 0)
 	if(is_muzzled())//immursion
 		src.emote("<font color=purple><B>[src]</B> [pick("mimes a pleasured moan","moans in silence")].</font>")
 	lastmoan = moan
@@ -162,11 +162,11 @@ mob/living/Initialize()
 	else
 		message = pick("cums violently!", "twists in orgasm.")
 
-	/*if(gender == MALE)
+	if(gender == MALE)
 		playsound(loc, "honk/sound/interactions/final_m[rand(1, 3)].ogg", 90, 1, 0)//, pitch = get_age_pitch())
 	else if(gender == FEMALE)
 		playsound(loc, "honk/sound/interactions/final_f[rand(1, 5)].ogg", 70, 1, 0)//, pitch = get_age_pitch())
-	*/
+
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 	multiorgasms += 1
 
@@ -174,11 +174,11 @@ mob/living/Initialize()
 		add_logs(partner, src, "came on")*/
 
 	if(multiorgasms > (sexual_potency * 0.34)) //AAAAA, WE DONT WANT NEGATIVES HERE, RE
-		refractory_period = rand(60, 180) - sexual_potency//sex cooldown
+		refractory_period = rand(30, 90) - sexual_potency//sex cooldown
 		refract_total = refractory_period
 		src.set_drugginess(rand(20, 30))
 	else
-		refractory_period = rand(60, 180) - sexual_potency
+		refractory_period = rand(30, 90) - sexual_potency
 		refract_total = refractory_period
 		src.set_drugginess(rand(5, 10))
 	lust = 0
@@ -325,10 +325,8 @@ mob/living/Initialize()
 				"sways their hips, pushing their sex into \the [partner]'s face.",
 				)
 			if(partner.a_intent == INTENT_HARM)
-				src.adjustBruteLoss(5)
+				// src.adjustBruteLoss(5)
 				retaliation_message = pick(
-					"bites furiously at \the [src]'s legs.",
-					"tightens teeth against \the [src]'s pussy.",
 					"looks deeply displeased to be there.",
 					"struggles to escape from between \the [src]'s thighs.",
 				)
@@ -342,21 +340,11 @@ mob/living/Initialize()
 				"rolls their hips hard, sinking into \the [partner]'s mouth.",
 				)
 			if(partner.a_intent == INTENT_HARM)
-				src.adjustBruteLoss(5)
+				// src.adjustBruteLoss(5)
 				retaliation_message = pick(
-					"bites down hard on \the [src]'s cock.",
-					"tightens teeth against \the [src]'s dick until blood flows.",
-					"stares up from between \the [src]'s knees, blood on their teeth.",
+					"stares up from between \the [src]'s knees, trying to squirm away.",
 					"struggles to escape from between \the [src]'s legs.",
 				)
-				if(prob(5)) // dick crit
-					src.adjustBruteLoss(20)
-					retaliation_message = pick(
-						"tightens teeth onto \the [src]'s cock, messily tearing it away!",
-						"bites down on \the [src]'s cock and doesn't let go until it rips off!",
-						"bites \the [src]'s cock off completely in the struggle!",
-					)
-					src.has_penis = FALSE
 		else
 			message = pick(
 				"grinds against \the [partner]'s face.",
@@ -367,11 +355,9 @@ mob/living/Initialize()
 				"rolls their hips hard against \the [partner]'s face.",
 				)
 			if(partner.a_intent == INTENT_HARM)
-				src.adjustBruteLoss(5)
+				// src.adjustBruteLoss(5)
 				retaliation_message = pick(
-					"bites down hard on \the [src]'s leg.",
-					"tightens teeth between \the [src]'s legs.",
-					"stares up from between \the [src]'s knees, blood on their teeth.",
+					"stares up from between \the [src]'s knees, trying to squirm away.",
 					"struggles to escape from between \the [src]'s legs.",
 				)
 	else
@@ -465,9 +451,9 @@ mob/living/Initialize()
 
 	if(is_fucking(partner, CUM_TARGET_THROAT))
 		message = "[pick(
-			"brutally fucks \the [partner]'s throat.",
-			"chokes \the [partner] on their dick.",
-			"brutally shoves their dick deep into \the [partner]'s mouth.")]"
+			"brutally shoves their cock into  \the [partner]'s throat to make them gag.",
+			"chokes \the [partner] on their dick, going in balls deep.",
+			"slams in and out of \the [partner]'s mouth, their balls slapping off their face.")]"
 		if(rand(3))
 			partner.emote("chokes on \The [src]")
 			if(prob(1) && istype(partner, /mob/living))
@@ -475,11 +461,9 @@ mob/living/Initialize()
 				H.adjustOxyLoss(5)
 				//add_logs(src, partner, "attacked", src) //cmon, it's 1 in 100. how can it spam logs
 		if(partner.a_intent == INTENT_HARM)
-			src.adjustBruteLoss(5)
+			// src.adjustBruteLoss(5)
 			retaliation_message = pick(
-				"bites down hard on \the [src]'s cock.",
-				"tightens teeth against \the [src]'s dick until blood flows.",
-				"stares up from between \the [src]'s knees, blood on their teeth.",
+				"stares up from between \the [src]'s knees, trying to squirm away.",
 				"struggles to escape from between \the [src]'s legs.",
 			)
 	else if(is_fucking(partner, CUM_TARGET_MOUTH))
@@ -522,9 +506,16 @@ mob/living/Initialize()
 	var/message
 
 	if(is_fucking(partner, CUM_TARGET_ANUS))
-		message = "fucks \the [partner]'s ass."
+		message = "[pick(
+			"thrusts in and out of \the [partner]'s ass.",
+			"pounds \the [partner]'s ass.",
+			"slams their hips up against \the [partner]'s ass hard.",
+			"goes balls deep into \the [partner]'s ass over and over again.")]"
 	else
-		message = "works their cock into \the [partner]'s asshole."
+		message = "[pick(
+			"works their cock into \the [partner]'s asshole.",
+			"grabs the base of their twitching cock and presses the tip into \the [partner]'s asshole.",
+			"shoves their dick deep inside of \the [partner]'s ass, making their rear jiggle.")]"
 		set_is_fucking(partner, CUM_TARGET_ANUS)
 
 	playsound(loc, "honk/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
@@ -540,7 +531,9 @@ mob/living/Initialize()
 	if(is_fucking(partner, CUM_TARGET_VAGINA))
 		message = "[pick(
 			"pounds \the [partner]'s pussy.",
-			"shoves their dick deep into \the [partner]'s pussy")]"
+			"shoves their dick deep into \the [partner]'s pussy",
+			"thrusts in and out of \the [partner]'s cunt.",
+			"goes balls deep into \the [partner]'s pussy over and over again.")]"
 	else
 		message = "slides their cock into \the [partner]'s pussy."
 		set_is_fucking(partner, CUM_TARGET_VAGINA)
