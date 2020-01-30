@@ -281,6 +281,10 @@
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user)
 
+
+/// Updates the icon state of the atom
+/atom/proc/update_icon_state()
+
 /atom/proc/relaymove(mob/user)
 	if(buckle_message_cooldown <= world.time)
 		buckle_message_cooldown = world.time + 50

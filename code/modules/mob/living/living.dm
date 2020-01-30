@@ -1,3 +1,18 @@
+//initialize and zero out lewd variables for mechanical erp
+/mob/living
+//	var/has_penis = FALSE
+//	var/has_vagina = FALSE
+//	var/has_breasts = FALSE // now checks for the cit organ instead of this variable
+//	var/last_partner
+//	var/last_orifice
+//	var/lastmoan
+//	var/sexual_potency =  15
+//	var/lust_tolerance = 100
+//	var/lust = 0
+//	var/multiorgasms = 0
+//	var/refactory_period = 0
+//end of lewd
+
 /mob/living/Initialize()
 	. = ..()
 	if(unique_name)
@@ -10,6 +25,10 @@
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
 	initialize_footstep()
+
+	//more stuff for mecherp
+	sexual_potency = (prob(80) ? rand(9, 14) : pick(rand(5, 13), rand(15, 20))) //make this less random pl0x
+	lust_tolerance = (prob(80) ? rand(150, 300) : pick(rand(10, 100), rand(350,600)))//this too
 
 /mob/living/proc/initialize_footstep()
 	AddComponent(/datum/component/footstep)
