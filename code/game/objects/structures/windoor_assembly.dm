@@ -242,7 +242,10 @@
 					var/obj/item/electronics/airlock/ae
 					ae = electronics
 					electronics = null
-					ae.forceMove(drop_location())
+					if(iscarbon(user))
+						ae.forceMove(drop_location())
+					else
+						return
 
 			else if(istype(W, /obj/item/pen))
 				var/t = stripped_input(user, "Enter the name for the door.", name, created_name,MAX_NAME_LEN)
