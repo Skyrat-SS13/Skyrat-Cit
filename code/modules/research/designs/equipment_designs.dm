@@ -59,8 +59,8 @@
 	desc = "An experimental jetpack that uses ion pulse energy, allowing for powered flight without the need for compressed gas."
 	id = "flightpack"
 	build_type = PROTOLATHE
-	build_path = /obj/item/tank/jetpack/flightpack
-	materials = list(MAT_METAL=8000, MAT_GLASS = 4000, MAT_DIAMOND = 4000, MAT_GOLD = 24000, MAT_SILVER = 24000, MAT_URANIUM = 10000, MAT_PLASMA = 10000, MAT_TITANIUM = 30000) //expensive, as it should be
+	build_path = /obj/item/tank/jetpack/suit/flightpack
+	materials = list(MAT_METAL=8000, MAT_GLASS = 4000, MAT_DIAMOND = 4000, MAT_GOLD = 24000, MAT_SILVER = 24000, MAT_URANIUM = 10000, MAT_PLASMA = 10000, MAT_TITANIUM = 3000) //expensive, as it should be
 	construction_time = 250
 	category = list("Misc")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
@@ -71,6 +71,6 @@
 	id = "flightsuit"
 	build_type = PROTOLATHE
 	build_path = /obj/item/clothing/suit/space/hardsuit/flightsuit
-	materials = list(MAT_METAL=8000, MAT_GLASS = 8000, MAT_DIAMOND = 1000, MAT_GOLD = 3000, MAT_SILVER = 3000, MAT_TITANIUM = 30000)
+	materials = list(MAT_METAL=8000, MAT_GLASS = 8000, MAT_DIAMOND = 1000, MAT_GOLD = 3000, MAT_SILVER = 3000, MAT_TITANIUM = 3000)
 	category = list("Misc")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING

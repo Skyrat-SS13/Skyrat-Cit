@@ -20,13 +20,6 @@
 	sort_priority = 1
 	quickbind = TRUE
 	quickbind_desc = "Creates a stargazer, which generates power when near starlight."
-
-/datum/clockwork_scripture/create_object/stargazer/check_special_requirements()
-	var/area/A = get_area(invoker)
-	if(A.outdoors || A.map_name == "Space" || !A.blob_allowed)
-		to_chat(invoker, "<span class='danger'>Stargazers can't be built off-station.</span>")
-		return
-	return ..()
 	
 
 //Integration Cog: Creates an integration cog that can be inserted into APCs to passively siphon power.
